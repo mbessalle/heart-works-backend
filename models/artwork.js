@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   artwork.associate = function (models) {
-    // associations can be defined here
+    artwork.belongsTo(models.user);
+    artwork.hasMany(models.bid);
   };
   return artwork;
 };

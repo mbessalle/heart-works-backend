@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   bid.associate = function (models) {
-    // associations can be defined here
+    bid.belongsTo(models.artwork);
   };
   return bid;
 };

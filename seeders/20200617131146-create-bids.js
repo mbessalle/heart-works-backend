@@ -31,7 +31,7 @@ module.exports = {
           artworkId: artwork2.id,
         },
         {
-          id: 1,
+          id: 3,
           email: "a@a.com",
           amount: 25,
           createdAt: new Date(),
@@ -39,7 +39,7 @@ module.exports = {
           artworkId: artwork1.id,
         },
         {
-          id: 2,
+          id: 4,
           email: "test@test.com",
           amount: 28,
           createdAt: new Date(),
@@ -47,7 +47,7 @@ module.exports = {
           artworkId: artwork2.id,
         },
         {
-          id: 1,
+          id: 5,
           email: "a@a.com",
           amount: 24,
           createdAt: new Date(),

@@ -17,7 +17,7 @@ module.exports = {
         {
           title: "flowers",
           imageUrl:
-            "https://lh3.googleusercontent.com/proxy/9xaX3AfPvZ6pJMrWaLHwQ7uyh_6B5-qtHFCthm4_3KRCRZsotRk1GN2hc22TcbAGxFP1UOLq8RKjYT-9GIyBvY_znBd_gLA7NXYMakwhqNA3idpP52xdXew1T7kcBy55Osgm1fbIOmjEuUPs_i7N5D-VZwtk-DycvP4JnGF9Cx2fMw",
+            "https://www.gallerytoday.com/43004/basket-with-flowers.jpg",
           hearts: 1,
           minimumBid: 5,
           createdAt: new Date(),

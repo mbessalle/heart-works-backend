@@ -7,12 +7,16 @@ const router = new Router();
 
 router.patch("/:id", async (req, res) => {
   const artwork = await Artwork.findByPk(req.params.id);
-  if (!artwork.userId === req.user.id) {
+  console.log("Je suis ici");
+  console.log(req.params.id);
+  console.log(artwork);
+
+  if (!artwork.dataValues.id === req.params.id) {
     return res
       .status(403)
       .send({ message: "You are not authorized to update this page" });
   }
-  const { title, imageUrl, hearts, minimumBid } = req.body;
+  const { hearts } = req.body;
 
   await artwork.update({ hearts });
 
@@ -20,24 +24,29 @@ router.patch("/:id", async (req, res) => {
 });
 
 router.post("/:id/bids", auth, async (req, res) => {
+  console.log("TAGUGU", req.params);
   const artwork = await Artwork.findByPk(req.params.id);
   console.log(artwork);
 
   if (artwork === null) {
-    return res.status(404).send({ message: "This artwork does not exist" });
+    res.status(404).send({ message: "This artwork does not exist" }).end();
   }
 
   if (!artwork.userId === req.user.id) {
-    return res
+    res
       .status(403)
-      .send({ message: "You are not authorized to update this page" });
+      .send({ message: "You are not authorized to update this page" })
+      .end();
   }
 
-  const { title, imageUrl, minimumBid, hearts } = req.body;
-  if (!title || !imageUrl || !minimumBid) {
-    return res
+  const { id, email, amount } = req.body;
+  console.log("Tyranosaurus Rex");
+  console.log(id, email, amount);
+  if (!id || !email || !amount) {
+    res
       .status(400)
-      .send({ message: "Please provide all the necessary information" });
+      .send({ message: "Please provide all the necessary information" })
+      .end();
   }
 
   const bid = await Bid.create({
@@ -46,7 +55,7 @@ router.post("/:id/bids", auth, async (req, res) => {
     artworkId: artwork.id,
   });
 
-  return res.status(201).send({ message: "Bid created", bid });
+  res.status(201).send({ message: "Bid created", bid }).end();
 });
 
 router.get("/", async (req, res) => {

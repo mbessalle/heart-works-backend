@@ -25,7 +25,7 @@ module.exports = {
     await queryInterface.addColumn(
       "users",
       "isArtist",
-      { type: Sequelize.BOOLEAN },
+      { type: Sequelize.BOOLEAN, defaultValue:true },
       {}
     );
   },

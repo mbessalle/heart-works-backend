@@ -70,6 +70,17 @@ router.get("/", async (req, res) => {
   res.status(200).send({ message: "ok", artwork });
 });
 
+router.post("/", auth, async (req, res) => {
+  const { userId, name, minimumBid, imageUrl } = req.body;
+  const artwork = await Artwork.create({
+    title: name,
+    imageUrl,
+    minimumBid,
+    userId,
+  });
+  res.status(200).send({ message: "ok" }).end();
+});
+
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
 

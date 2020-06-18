@@ -1,0 +1,3 @@
+This assignment has been crazy hard in my opinion but it has been relatively manageable beacause we had to previous excersice with a solution provided by codaisseur, otherwise there would have been no way I could have finished this. I couldnt get the isartist to work properly and have no idea why it doesnt work.
+ 
+Two of my most time consuming and frustrating challenges were an error from sequelize that I solved by dispatching artwork.id instead of artwork.dataValues.id. this problem is still something I dont quiet understand why it happens because dataValues contained the Id. The other big issue was, again when dispatching, sending the funciton call and not just the function. 
